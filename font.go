@@ -85,8 +85,8 @@ func (f *Font) Printf(x, y float32, scale float32, fs string, argv ...interface{
 	lowChar := rune(32)
 
 	//setup blending mode
-	gl.Enable(gl.BLEND)
-	gl.BlendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
+	//gl.Enable(gl.BLEND)
+	//gl.BlendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
 
 	// Activate corresponding render state
 	gl.UseProgram(f.program)
@@ -149,7 +149,7 @@ func (f *Font) Printf(x, y float32, scale float32, fs string, argv ...interface{
 	gl.BindVertexArray(0)
 	gl.BindTexture(gl.TEXTURE_2D, 0)
 	gl.UseProgram(0)
-	gl.Disable(gl.BLEND)
+	//gl.Disable(gl.BLEND)
 
 	return nil
 }
